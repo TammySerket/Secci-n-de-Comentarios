@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Crear Comentarios</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="name" type="text" class="validate">
+                    <span class="helper-text" data-error="wrong" data-success="right">Nombre</span>
+                </div>
+                <div class="input-field col s12">
+                    <input id="commentTxt" type="text" class="validate">
+                    <span class="helper-text" data-error="wrong" data-success="right">Publicación</span>
+                </div>
+                <button id="submitBtn" type="button" class="btn btn-danger btnGreen">Publicar</button>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="comment">
+            <h3>Publicaciones</h3>
+            <div id="dataComment"></div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <span class="textComment">
+                </span>
+            </div>
+        </div>
+        </section>
+
+        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyA1AB4hasvuFuep7SlDVlCiT2cZQqPzx34",
+                authDomain: "comment-box-acb26.firebaseapp.com",
+                databaseURL: "https://comment-box-acb26.firebaseio.com",
+                projectId: "comment-box-acb26",
+                storageBucket: "comment-box-acb26.appspot.com",
+                messagingSenderId: "186642551639"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="app.js"></script>
+</body>
+
+</html>
