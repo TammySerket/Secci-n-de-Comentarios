@@ -1,5 +1,5 @@
 //rescata elemento contenedor 
-const listaMensajes = document.getElementById("name") + document.getElementById("commentTxt");
+const listaMensajes = document.getElementById("dataComment");
 
 // Ejecución eventos
 function eventListeners(){
@@ -46,13 +46,12 @@ listaMensajes.appendChild(itemPost);
 
 // añadir post al documento
 function agregarPublicacion(){
-  if((document.getElementById("commentTxt").value === "" || document.getElementById("name").value === "")) {
+  if((document.getElementById("commentTxt").value === "")) {
       alert("no puedes dejar campos vacíos");
     } else{
       // leer el valor de textarea
   const post = document.getElementById("commentTxt").value;
-  const name = document.getElementById('name').value;
-  const posts = name + post;
+  const posts = post;
   // crear elementos en el DOM
   generarDom(posts);
   // añadir a Local Storage
@@ -111,5 +110,5 @@ function borrarPostsLocalStorage(post) {
       }
   });
   //convierte el areglo nuevo (con la tarea eliminada) en string para volver a guardarlo en local storage
- localStorage.setItem("textComment", JSON.stringify(posts)); 
+ localStorage.setItem("post", JSON.stringify(posts)); 
 } 
